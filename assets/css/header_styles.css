@@ -1,0 +1,76 @@
+:root {
+    --header-bar-height: 50px
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div#header-bar {
+    height: var(--header-bar-height);
+    width: 100%;
+    border: 1px solid red;
+}
+
+div.header-element {
+    width: auto;
+    height: 100%;
+}
+
+div#lefthand-container {
+    height: var(--header-bar-height);
+    display: inline-block;
+    border: 1px solid red;
+    padding: 0rem 0rem;
+    vertical-align: middle;
+}
+
+div#righthand-container {
+    height: var(--header-bar-height);
+    display: inline-block;
+    border: 1px solid red;
+    padding: 0rem 0rem;
+    vertical-align: middle;
+    float: right;
+}
+
+li.widget-container {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    height: 100%;
+    max-height: var(--header-bar-height);
+}
+
+
+li.widget-container > * {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+li.widget-container > h2 {
+    vertical-align: top;
+    transform: translateY(-10%);
+    height: calc(var(--header-bar-height) * 0.8);
+}
+
+li.widget-container > p {
+    vertical-align: top;
+    transform: translateY(-25%);
+    height: calc(var(--header-bar-height) * 0.8);
+}
+
+li.widget-container > * > * {
+    height: calc(var(--header-bar-height) * 0.8);
+    width: auto;
+    top: 50%;
+    transform: translateY(10%);
+}
+
+img#header-banner {
+    width: 100%;
+    height: auto;
+}

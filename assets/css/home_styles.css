@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div#complete-home-section {
+    width: 100%;
+    border: 3px solid green;
+}
+
+div.home-page-area {
+    display: inline-block;
+    vertical-align: top;
+}
+
+div.home-page-area > * {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#left-home-container {
+    border: 4px solid blue;
+    width: 15%;
+}
+
+div#middle-home-container {
+    border: 4px solid blue;
+    width: 70%;
+}
+
+div#right-home-container {
+    border: 4px solid blue;
+    width: 15%;
+}
+
+li.widget_block {
+    list-style-type: none;
+}

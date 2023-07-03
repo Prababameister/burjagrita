@@ -2,6 +2,7 @@
 function burjagrita_css_scripts () {
     wp_enqueue_style('header_styles', get_template_directory_uri() . '/assets/css/header_styles.css', false, '1.1', 'all');
     wp_enqueue_style('home_styles', get_template_directory_uri() . '/assets/css/home_styles.css', false, '1.1', 'all');
+    wp_enqueue_style('post_styles', get_template_directory_uri() . '/assets/css/post_styles.css', false, '1.1', 'all');
 }
 add_action('wp_enqueue_scripts', 'burjagrita_css_scripts');
 

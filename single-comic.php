@@ -35,28 +35,6 @@
             <!-- TODO Make a better placeholder button and style all of this -->
             <div id="nav-menu" class="center-section-element">
                 <?php
-                // Actually create the button
-                function create_button ( $link, $class_str = '', $button_image_id = '') {
-                    $button_image_src = ($button_image_id == '' ? (get_template_directory_uri() . '/assets/images/button-placeholder.png') : $button_image_id);
-
-                    echo
-                    '<li class="nav-item ' . $class_str . '">
-                        <a href=' . $link . '>
-                            <img src="' . $button_image_src . '">
-                        </a>
-                    </li>
-                    ';
-                }
-                function create_button_spacer () {
-                    echo
-                    '<li class="nav-item spacer-list-item">
-                        <div id="spacer-div">
-                        </div>
-                    </li>
-                    ';
-
-                }
-
                 // Navigation links
                 function get_first_comic_link() {
                     global $post;
@@ -99,22 +77,47 @@
                     $first = $loop[0]->ID;
                     return ( $post->ID == $first ) ? true : false;
                 }
+
+                // Actually create the button
+                function create_button ( $link, $class_str = '', $button_image_id = '') {
+                    $button_image_src = ($button_image_id == '' ? (get_template_directory_uri() . '/assets/images/button-placeholder.png') : $button_image_id);
+
+                    if ($class_str == "center-align-button") {
+                        $side = "left";
+                        if ( is_first() ) {
+                            $side = "right";
+                        }
+
+                        echo
+                        '<li style="float: ' . $side . ';" class="nav-item ' . $class_str . '">
+                            <a href=' . $link . '>
+                                <img src="' . $button_image_src . '">
+                            </a>
+                        </li>
+                            ';
+                    } else {
+                        echo
+                        '<li style=" " class="nav-item ' . $class_str . '">
+                            <a href=' . $link . '>
+                                <img src="' . $button_image_src . '">
+                            </a>
+                        </li>
+                        ';
+
+                    }
+
+                }
+
                 ?>
 
                 <ul class="comic-nav-list">
                     <?php
-                    if ( is_first() ) {
-                        create_button_spacer();
-                        create_button_spacer();
-                    } else {
+                    if ( !is_first() ) {
                         create_button( get_first_comic_link(), 'left-align-button', get_theme_mod( 'first-button-id' ) );
                         create_button( get_previous_comic_link(), 'left-align-button', get_theme_mod( 'previous-button-id' ) );
                     }
                     create_button( get_random_comic_link(), 'center-align-button', get_theme_mod( 'random-button-id' ) );
-                    if ( is_latest() ) {
-                        create_button_spacer();
-                        create_button_spacer();
-                    } else {
+                    if ( !is_latest() ) {
                         create_button( get_next_comic_link(), 'right-align-button', get_theme_mod( 'next-button-id' ) );
                         create_button( get_latest_comic_link(), 'right-align-button', get_theme_mod( 'latest-button-id' ) );
                     }

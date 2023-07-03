@@ -1,0 +1,50 @@
+:root {
+    --content-width: 75%;
+    --button-bar-width: 75%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div#center-section {
+    width: var(--content-width);
+    margin: 0 auto;
+}
+
+div.center-section-element {
+    width: 100%;
+}
+
+div#meta-info > h1#comic-title {
+    font-size: 60px;
+}
+
+div#meta-info > h4#comic-date {
+    font-size: 30px;
+}
+
+div#nav-menu {
+    width: var(--button-bar-width);
+    margin: 0 auto;
+}
+ul.comic-nav-list {
+    list-style-type: none;
+    width: 100%;
+}
+
+li.nav-item {
+    width: 20%;
+    padding: 1%;
+    float: left;
+    display: block;
+}
+li.right-align-button {
+    float: right;
+}
+
+li.nav-item > a > img {
+    width: 100%;
+}

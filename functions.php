@@ -9,14 +9,14 @@ function wpsites_comment_form_shortcode() {
 add_shortcode( 'wpsites_comment_form', 'wpsites_comment_form_shortcode' );
 
 function burjagrita_css_scripts () {
-    wp_enqueue_style('header_styles', get_template_directory_uri() . '/assets/css/header_styles.css', false, '1.1', 'all');
-    wp_enqueue_style('home_styles', get_template_directory_uri() . '/assets/css/home_styles.css', false, '1.1', 'all');
-    wp_enqueue_style('post_styles', get_template_directory_uri() . '/assets/css/post_styles.css', false, '1.1', 'all');
-    wp_enqueue_style('comments_styles', get_template_directory_uri() . '/assets/css/comments_styles.css', false, '1.1', 'all');
+    wp_enqueue_style('header_styles', get_theme_file_uri('assets/css/header_styles.css'), false, '1.1', 'all');
+    wp_enqueue_style('home_styles', get_theme_file_uri('assets/css/home_styles.css'), false, '1.1', 'all');
+    wp_enqueue_style('post_styles', get_theme_file_uri('assets/css/post_styles.css'), false, '1.1', 'all');
+    wp_enqueue_style('comments_styles', get_theme_file_uri('assets/css/comments_styles.css'), false, '1.1', 'all');
 
     wp_enqueue_style('main-style', get_stylesheet_uri(), false, '20150320');
-    $righteous_font = "@font-face { font-family: Righteous-Regular; src: url(" . get_template_directory_uri() . "/assets/fonts/Righteous-Regular.ttf); font-weight: normal; }";
-    $pinchik_font = "@font-face { font-family: Pinchik-Light; src: url( " . get_template_directory_uri() . "/assets/fonts/Pinchik-Light.otf); font-weight: normal; }";
+    $righteous_font = "@font-face { font-family: Righteous-Regular; src: url(" . get_theme_file_uri('assets/fonts/Righteous-Regular.ttf') . "); font-weight: normal; }";
+    $pinchik_font = "@font-face { font-family: Pinchik-Light; src: url( " . get_theme_file_uri('assets/fonts/Pinchik-Light.otf') . "); font-weight: normal; }";
     wp_add_inline_style('main-style', $righteous_font);
     wp_add_inline_style('main-style', $pinchik_font);
 

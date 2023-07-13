@@ -1,0 +1,21 @@
+:root {
+    --content-width: 75%;
+    --button-bar-width: 60%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div#comments-section {
+    width: var(--content-width);
+    margin: 0 auto;
+    padding-top: 20px;
+    clear: both;
+}
+
+h1#comments-title {
+    padding-bottom: 10px;
+}

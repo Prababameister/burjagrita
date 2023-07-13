@@ -1,8 +1,25 @@
 <?php
+function wpsites_comment_form_shortcode() {
+    ob_start();
+    comment_form();
+    $cform = ob_get_contents();
+    ob_end_clean();
+    return $cform;
+}
+add_shortcode( 'wpsites_comment_form', 'wpsites_comment_form_shortcode' );
+
 function burjagrita_css_scripts () {
     wp_enqueue_style('header_styles', get_template_directory_uri() . '/assets/css/header_styles.css', false, '1.1', 'all');
     wp_enqueue_style('home_styles', get_template_directory_uri() . '/assets/css/home_styles.css', false, '1.1', 'all');
     wp_enqueue_style('post_styles', get_template_directory_uri() . '/assets/css/post_styles.css', false, '1.1', 'all');
+    wp_enqueue_style('comments_styles', get_template_directory_uri() . '/assets/css/comments_styles.css', false, '1.1', 'all');
+
+    wp_enqueue_style('main-style', get_stylesheet_uri(), false, '20150320');
+    $righteous_font = "@font-face { font-family: Righteous-Regular; src: url(" . get_template_directory_uri() . "/assets/fonts/Righteous-Regular.ttf); font-weight: normal; }";
+    $pinchik_font = "@font-face { font-family: Pinchik-Light; src: url( " . get_template_directory_uri() . "/assets/fonts/Pinchik-Light.otf); font-weight: normal; }";
+    wp_add_inline_style('main-style', $righteous_font);
+    wp_add_inline_style('main-style', $pinchik_font);
+
 }
 add_action('wp_enqueue_scripts', 'burjagrita_css_scripts');
 
@@ -16,9 +33,18 @@ function burjagrita_post_init() {
         'has_archive' => true,
         'rewrite' => true,
         'query_var' => true,
+        'supports' => array('title','editor','author','excerpt','comments','revisions'),
     ));
 }
 add_action( 'init', 'burjagrita_post_init' );
+
+function wpdocs_comments_open( $open, $post_id ) {
+	$post = get_post( $post_id );
+	if ( 'page' == $post->post_type )
+		$open = true;
+	return $open;
+}
+add_filter( 'comments_open', 'wpdocs_comments_open', 10, 2 );
 
 function burjagrita_settings( $wp_customize ) {
     $wp_customize->add_section(
@@ -27,8 +53,48 @@ function burjagrita_settings( $wp_customize ) {
             'title' => 'Theming Options',
         )
     );
+
     $wp_customize->add_setting(
         'banner_settings_id',
+        array(
+            'default' => '',
+        )
+    );
+    $wp_customize->add_setting(
+        'site_display_id',
+        array(
+            'default' => bloginfo('name'),
+        )
+    );
+
+    // TODO Replace this with a method of some kind to reduce the boilerplate
+    // Buttons
+    $wp_customize->add_setting(
+        'first_button_settings_id',
+        array(
+            'default' => '',
+        )
+    );
+    $wp_customize->add_setting(
+        'previous_button_settings_id',
+        array(
+            'default' => '',
+        )
+    );
+    $wp_customize->add_setting(
+        'random_button_settings_id',
+        array(
+            'default' => '',
+        )
+    );
+    $wp_customize->add_setting(
+        'next_button_settings_id',
+        array(
+            'default' => '',
+        )
+    );
+    $wp_customize->add_setting(
+        'latest_button_settings_id',
         array(
             'default' => '',
         )
@@ -45,14 +111,6 @@ function burjagrita_settings( $wp_customize ) {
             )
         )
     );
-
-    $wp_customize->add_setting(
-        'site_display_id',
-        array(
-            'default' => bloginfo('name'),
-        )
-    );
-
     $wp_customize->add_control(
         'site_display_control_id',
         array(
@@ -60,6 +118,61 @@ function burjagrita_settings( $wp_customize ) {
             'section' => 'theming_section_id',
             'settings' => 'site_display_id',
         ),
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'first_button_id',
+            array(
+                'label' => __('First Button', 'burjagrita'),
+                'section' => 'theming_section_id',
+                'settings' => 'first_button_settings_id',
+            )
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'previous_button_id',
+            array(
+                'label' => __('Previous Button', 'burjagrita'),
+                'section' => 'theming_section_id',
+                'settings' => 'previous_button_settings_id',
+            )
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'random_button_id',
+            array(
+                'label' => __('Random Button', 'burjagrita'),
+                'section' => 'theming_section_id',
+                'settings' => 'random_button_settings_id',
+            )
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'next_button_id',
+            array(
+                'label' => __('Next Button', 'burjagrita'),
+                'section' => 'theming_section_id',
+                'settings' => 'next_button_settings_id',
+            )
+        )
+    );
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'latest_button_id',
+            array(
+                'label' => __('Latest Button', 'burjagrita'),
+                'section' => 'theming_section_id',
+                'settings' => 'latest_button_settings_id',
+            )
+        )
     );
 }
 add_action( 'customize_register', 'burjagrita_settings' );
@@ -91,6 +204,15 @@ function widget_areas_init() {
         'after_sidebar' => '</div>',
     ) );
 
+    // Profile Menu
+    register_sidebar( array (
+        'name' => __('Profile Menu'),
+        'id' => 'profile-menu-sidebar',
+        'description' => __( 'The profile menu section of the website' ),
+        'before_widget' => '<li id="%1$s" class="profile-menu-widget %2$s">',
+        'after_widget' => '</li>',
+    ) );
+
     // Left Home Page
     register_sidebar( array (
         'name' => __('Left Home'),
@@ -99,16 +221,6 @@ function widget_areas_init() {
         'before_widget' => '<li id="%1$s" class="left-home %2$s">',
         'after_widget' => '</li>',
         'before_sidebar' => '<div id="left-home-container" class="home-page-area">',
-        'after_sidebar' => '</div>',
-    ) );
-    // Middle Home Page
-    register_sidebar( array (
-        'name' => __('Middle Home'),
-        'id' => 'middle-home',
-        'description' => __( 'The middle part of the home page' ),
-        'before_widget' => '<li id="%1$s" class="middle-home %2$s">',
-        'after_widget' => '</li>',
-        'before_sidebar' => '<div id="middle-home-container" class="home-page-area">',
         'after_sidebar' => '</div>',
     ) );
     // Right Home Page
@@ -123,6 +235,5 @@ function widget_areas_init() {
     ) );
 }
 add_action( 'widgets_init', 'widget_areas_init' );
-
 
 ?>

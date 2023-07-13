@@ -1,6 +1,6 @@
 :root {
     --content-width: 75%;
-    --button-bar-width: 75%;
+    --button-bar-width: 60%;
 }
 
 * {
@@ -26,9 +26,14 @@ div#meta-info > h4#comic-date {
     font-size: 30px;
 }
 
+div#comic-section > p > img {
+    width: 100%;
+}
+
 div#nav-menu {
     width: var(--button-bar-width);
     margin: 0 auto;
+    box-sizing: border-box;
 }
 ul.comic-nav-list {
     list-style-type: none;

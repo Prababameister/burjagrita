@@ -8,10 +8,14 @@
     box-sizing: border-box;
 }
 
+div#whole-header {
+    position: relative;
+}
+
 div#header-bar {
     height: var(--header-bar-height);
     width: 100%;
-    border: 1px solid red;
+    background-image: linear-gradient(to right, #c9cbf5, #d6bcf0);
 }
 
 div.header-element {
@@ -22,7 +26,6 @@ div.header-element {
 div#lefthand-container {
     height: var(--header-bar-height);
     display: inline-block;
-    border: 1px solid red;
     padding: 0rem 0rem;
     vertical-align: middle;
 }
@@ -30,7 +33,6 @@ div#lefthand-container {
 div#righthand-container {
     height: var(--header-bar-height);
     display: inline-block;
-    border: 1px solid red;
     padding: 0rem 0rem;
     vertical-align: middle;
     float: right;
@@ -53,7 +55,6 @@ li.widget-container > * {
 
 li.widget-container > h2 {
     vertical-align: top;
-    transform: translateY(-10%);
     height: calc(var(--header-bar-height) * 0.8);
 }
 
@@ -73,4 +74,22 @@ li.widget-container > * > * {
 img#header-banner {
     width: 100%;
     height: auto;
+    z-index: 3;
+}
+
+div#profile-menu {
+    position: absolute;
+    top: 55px;
+    right: 10px;
+    height: 300px;
+    max-height: 0px;
+    width: 200px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    z-index: 10;
+    background-color: white;
+}
+
+div#profile-menu.open-profile-menu {
+    max-height: 400px;
 }

@@ -3,3 +3,37 @@
 /* Author: Prababa B Meister*/
 /* Description: What happens if you jump from the Burj Kalifa with a margarita in your glass. Would you become the blood red margarita?*/
 /**/
+
+@font-face {
+    font-family: Righteous-Regular;
+    src: url(assets/fonts/Righteous-Regular.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: MPlus;
+    src: url(assets/fonts/MPLUSRounded1c-Regular.ttf);
+    font-weight: normal;
+}
+
+body {
+    background-color: #efefef;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Righteous-Regular;
+}
+
+p, li, a {
+    font-family: MPlus;
+}
+
+.avatar {
+    border-radius: 40%;
+    -moz-border-radius: 40%;
+    -webkit-border-radius: 40%;
+}
+
+li {
+    list-style-type: none;
+}

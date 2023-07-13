@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+/**
+* Template Name: Home Page
+*/
+?>
+
 <html>
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -15,9 +21,15 @@
             <?php
 
             dynamic_sidebar('Left Home');
+            ?>
 
-            dynamic_sidebar('Middle Home');
+            <div id="middle-home-container" class="home-page-area">
+                <?php
+                the_content();
+                ?>
+            </div>
 
+            <?php
             dynamic_sidebar('Right Home');
 
             get_footer();

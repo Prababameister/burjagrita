@@ -19,7 +19,6 @@ function burjagrita_css_scripts () {
     $pinchik_font = "@font-face { font-family: Pinchik-Light; src: url( " . get_theme_file_uri('assets/fonts/Pinchik-Light.otf') . "); font-weight: normal; }";
     wp_add_inline_style('main-style', $righteous_font);
     wp_add_inline_style('main-style', $pinchik_font);
-
 }
 add_action('wp_enqueue_scripts', 'burjagrita_css_scripts');
 

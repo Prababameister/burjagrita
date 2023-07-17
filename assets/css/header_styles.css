@@ -58,6 +58,13 @@ li.widget-container > h2 {
     height: calc(var(--header-bar-height) * 0.8);
 }
 
+li.widget-container > h2 > a {
+    vertical-align: top;
+    height: calc(var(--header-bar-height) * 0.8);
+    text-decoration: none;
+    color: black;
+}
+
 li.widget-container > p {
     vertical-align: top;
     transform: translateY(-25%);

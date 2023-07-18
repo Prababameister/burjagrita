@@ -17,7 +17,7 @@
             <!-- Title Content -->
             <div id="meta-info" class="center-section-element">
                 <h1 id="comic-title"> <?php the_title(); ?> </h1>
-                <h4 id="comic-date"> <?php echo get_the_date('d/j/y'); ?> </h4>
+                <h4 id="comic-date"> <?php echo get_the_date('M d, Y'); ?> </h4>
             </div>
 
             <!-- Actual Comic -->

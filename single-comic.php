@@ -117,19 +117,19 @@
                 <ul class="comic-nav-list">
                     <?php
                     if ( is_first() ) {
-                        create_button( get_latest_comic_link(), 'right-align-button', get_theme_mod( 'latest_button_id' ) );
-                        create_button( get_next_comic_link(), 'right-align-button', get_theme_mod( 'next_button_id' ) );
-                        create_button( get_random_comic_link(), 'center-align-button', get_theme_mod( 'random_button_id' ) );
+                        create_button( get_latest_comic_link(), 'right-align-button', get_theme_mod( 'latest_button_settings_id' ) );
+                        create_button( get_next_comic_link(), 'right-align-button', get_theme_mod( 'next_button_settings_id' ) );
+                        create_button( get_random_comic_link(), 'center-align-button', get_theme_mod( 'random_button_settings_id' ) );
                     } else if ( is_latest() ) {
                         create_button( get_first_comic_link(), 'left-align-button', get_theme_mod( 'first_button_settings_id' ) );
-                        create_button( get_previous_comic_link(), 'left-align-button', get_theme_mod( 'previous_button_id' ) );
-                        create_button( get_random_comic_link(), 'center-align-button', get_theme_mod( 'random_button_id' ) );
+                        create_button( get_previous_comic_link(), 'left-align-button', get_theme_mod( 'previous_button_settings_id' ) );
+                        create_button( get_random_comic_link(), 'center-align-button', get_theme_mod( 'random_button_settings_id' ) );
                     } else {
                         create_button( get_first_comic_link(), 'left-align-button', get_theme_mod( 'first_button_settings_id' ) );
-                        create_button( get_previous_comic_link(), 'left-align-button', get_theme_mod( 'previous_button_id' ) );
-                        create_button( get_random_comic_link(), 'center-align-button', get_theme_mod( 'random_button_id' ) );
-                        create_button( get_latest_comic_link(), 'right-align-button', get_theme_mod( 'latest_button_id' ) );
-                        create_button( get_next_comic_link(), 'right-align-button', get_theme_mod( 'next_button_id' ) );
+                        create_button( get_previous_comic_link(), 'left-align-button', get_theme_mod( 'previous_button_settings_id' ) );
+                        create_button( get_random_comic_link(), 'center-align-button', get_theme_mod( 'random_button_settings_id' ) );
+                        create_button( get_latest_comic_link(), 'right-align-button', get_theme_mod( 'latest_button_settings_id' ) );
+                        create_button( get_next_comic_link(), 'right-align-button', get_theme_mod( 'next_button_settings_id' ) );
                     }
                     ?>
                 </ul>

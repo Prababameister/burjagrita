@@ -97,21 +97,34 @@ div#profile-menu {
     overflow: hidden;
     transition: max-height 0.5s;
     z-index: 10;
-    background-color: white;
+    background-color: #e3e3e3;
+    border-radius: 30px 0px 30px 30px;
+    outline: 3px solid black;
 }
 
 div#profile-menu.open-profile-menu {
     max-height: 400px;
+    border: 3px solid #a8acef;
 }
 
 div#profile-menu > li > p {
     font-family: Righteous-Regular;
     font-size: 35px;
+    padding-top: 10px;
+}
+
+div#profile-menu > li > p {
+    font-family: MPlus;
+    font-size: 22px;
+    text-decoration: none;
+    color: #171e8e;
+    font-weight: bold;
 }
 
 div#profile-menu > li > * {
     text-align: right;
     padding-bottom: 10px;
+    padding-right: 10px;
 }
 
 div#profile-picture-button {

@@ -39,3 +39,7 @@ p, li, a {
 li {
     list-style-type: none;
 }
+
+a:hover {
+    text-decoration: underline;
+}

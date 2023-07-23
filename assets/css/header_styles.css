@@ -139,10 +139,10 @@ div#user-settings > a:hover {
     text-decoration: underline;
 }
 
-div.logged-in > a:hover {
+div#profile-menu > li > div.logged-in > a:hover {
     text-decoration: underline;
 }
 
-h2 > a:hover {
+li.widget-container h2 > a:hover {
     text-decoration: underline;
 }

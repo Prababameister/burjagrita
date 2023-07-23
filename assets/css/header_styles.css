@@ -127,5 +127,10 @@ div#profile-menu > li > * {
     padding-right: 10px;
 }
 
-div#profile-picture-button {
+div#profile-menu > li > figure > img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 60%;
+    width: auto;
 }

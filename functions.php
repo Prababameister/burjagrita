@@ -3,11 +3,11 @@ function shortcode_user_avatar() {
     if(is_user_logged_in()) {
         global $current_user;
         get_currentuserinfo();
-        return get_avatar( $current_user -> ID, 120 );
+        return '<div id="profile-picture-button">' . get_avatar( $current_user -> ID, 120 ) . '</div>';
     }
     else {
         // If not logged in then show default avatar. Change the URL to show your own default avatar
-        return "Hello";
+        return '<div id="profile-picture-button"> <a href="' . get_site_url() . '/login">Login</a> </div>';
     }
 }
 add_shortcode('display-user-avatar','shortcode_user_avatar');

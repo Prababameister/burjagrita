@@ -1,12 +1,4 @@
 <?php
-function shortcode_get_username() {
-    global $current_user;
-    wp_get_current_user();
-
-    return current_user->user_login;
-}
-add_shortcode('display-username','shortcode_get_username');
-
 function shortcode_user_avatar() {
     if(is_user_logged_in()) {
         global $current_user;

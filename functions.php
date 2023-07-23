@@ -1,12 +1,16 @@
 <?php
-function wpsites_comment_form_shortcode() {
-    ob_start();
-    comment_form();
-    $cform = ob_get_contents();
-    ob_end_clean();
-    return $cform;
+function shortcode_user_avatar() {
+    if(is_user_logged_in()) {
+        global $current_user;
+        get_currentuserinfo();
+        return get_avatar( $current_user -> ID, 120 );
+    }
+    else {
+        // If not logged in then show default avatar. Change the URL to show your own default avatar
+        return "Hello";
+    }
 }
-add_shortcode( 'wpsites_comment_form', 'wpsites_comment_form_shortcode' );
+add_shortcode('display-user-avatar','shortcode_user_avatar');
 
 function burjagrita_css_scripts () {
     wp_enqueue_style('header_styles', get_theme_file_uri('assets/css/header_styles.css'), false, '1.1', 'all');

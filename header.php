@@ -22,7 +22,7 @@
 </div>
 
 <script type="text/javascript">
-    var profilePicture = document.getElementById("block-17");
+    var profilePicture = document.getElementById("profile-menu-button");
 
     var openProfileMenu = function() {
         profileMenu = document.getElementById("profile-menu");

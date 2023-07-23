@@ -1,6 +1,9 @@
 <?php
 function shortcode_get_username() {
-    return wp_get_current_user();
+    global $current_user;
+    wp_get_current_user();
+
+    return current_user->user_login;
 }
 add_shortcode('display-username','shortcode_get_username');
 

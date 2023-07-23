@@ -1,5 +1,8 @@
 <?php
 function shortcode_user_avatar() {
+    ?>
+    <div id="profile-picture-button">
+    <?php
     if(is_user_logged_in()) {
         global $current_user;
         get_currentuserinfo();
@@ -9,6 +12,9 @@ function shortcode_user_avatar() {
         // If not logged in then show default avatar. Change the URL to show your own default avatar
         return "Hello";
     }
+    ?>
+    <?php
+    </div>
 }
 add_shortcode('display-user-avatar','shortcode_user_avatar');
 

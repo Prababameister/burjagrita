@@ -31,7 +31,9 @@ p, li, a {
 .avatar {
     border-radius: 40%;
     -moz-border-radius: 40%;
-    -webkit-border-radius: 40%;
+    -webkit-border-radius: 100%;
+    border: 2px solid #c796fb;
+    outline: 2px solid black;
 }
 
 li {

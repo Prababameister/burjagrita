@@ -134,3 +134,15 @@ div#profile-menu > li > figure > img {
     height: 60%;
     width: auto;
 }
+
+div#user-settings > a:hover {
+    text-decoration: underline;
+}
+
+div.logged-in > a:hover {
+    text-decoration: underline;
+}
+
+h2 > a:hover {
+    text-decoration: underline;
+}

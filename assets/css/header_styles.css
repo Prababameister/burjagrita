@@ -93,7 +93,7 @@ div#profile-menu {
     right: 10px;
     height: 300px;
     max-height: 0px;
-    width: 200px;
+    width: 400px;
     overflow: hidden;
     transition: max-height 0.5s;
     z-index: 10;
@@ -102,6 +102,16 @@ div#profile-menu {
 
 div#profile-menu.open-profile-menu {
     max-height: 400px;
+}
+
+div#profile-menu > li > p {
+    font-family: Righteous-Regular;
+    font-size: 35px;
+}
+
+div#profile-menu > li > * {
+    text-align: right;
+    padding-bottom: 10px;
 }
 
 div#profile-picture-button {

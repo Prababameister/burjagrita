@@ -113,7 +113,7 @@ div#profile-menu > li > p {
     padding-top: 10px;
 }
 
-div#profile-menu > li > p {
+div#profile-menu > li > a {
     font-family: MPlus;
     font-size: 22px;
     text-decoration: none;

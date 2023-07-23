@@ -98,7 +98,7 @@
                                 <img src="' . $button_image_src . '">
                             </a>
                         </li>
-                            ';
+                                ';
                     } else {
                         echo
                         '<li style=" " class="nav-item ' . $class_str . '">
@@ -106,7 +106,7 @@
                                 <img src="' . $button_image_src . '">
                             </a>
                         </li>
-                        ';
+                                ';
 
                     }
 
@@ -138,11 +138,15 @@
 
 
         <div id="comments-section">
-        <?php
-        if ( comments_open() ):
+            <?php
+            if ( comments_open() ):
             comments_template();
-        endif
-        ?>
+            endif
+
+            ?>
         </div>
+
+        <?php get_footer(); ?>
+
     </body>
 </html>

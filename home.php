@@ -32,8 +32,10 @@
             <?php
             dynamic_sidebar('Right Home');
 
-            get_footer();
             ?>
         </div>
+        <?php
+        get_footer();
+        ?>
     </body>
 </html>

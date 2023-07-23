@@ -1,6 +1,8 @@
 <?php
-remove_filter('the_content', 'wpautop');
-add_filter('the_content', 'wpautop', 12);
+function shortcode_get_username() {
+    return wp_get_current_user();
+}
+add_shortcode('display-username','shortcode_get_username');
 
 function shortcode_user_avatar() {
     if(is_user_logged_in()) {

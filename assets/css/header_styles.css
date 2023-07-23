@@ -70,6 +70,8 @@ li.widget-container > p {
     vertical-align: top;
     transform: translateY(-25%);
     height: calc(var(--header-bar-height) * 0.8);
+    position: absolute;
+    z-index: 0;
 }
 
 li.widget-container > * > * {

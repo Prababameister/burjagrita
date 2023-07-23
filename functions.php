@@ -1,5 +1,6 @@
 <?php
 remove_filter('the_content', 'wpautop');
+add_filter('the_content', 'wpautop', 12);
 
 function shortcode_user_avatar() {
     if(is_user_logged_in()) {
@@ -9,7 +10,7 @@ function shortcode_user_avatar() {
     }
     else {
         // If not logged in then show default avatar. Change the URL to show your own default avatar
-        return '<div id="profile-picture-button"> <a href="' . get_site_url() . '/login">Login</a> </div>';
+        return '<div id="log-in-button"> <a href="' . get_site_url() . '/login">Login</a> </div>';
     }
 }
 add_shortcode('display-user-avatar','shortcode_user_avatar');

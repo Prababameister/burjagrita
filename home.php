@@ -19,7 +19,6 @@
 
         <div id="complete-home-section">
             <?php
-
             dynamic_sidebar('Left Home');
             ?>
 
@@ -31,7 +30,6 @@
 
             <?php
             dynamic_sidebar('Right Home');
-
             ?>
         </div>
         <?php

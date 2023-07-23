@@ -146,3 +146,17 @@ div#profile-menu > li > div.logged-in > a:hover {
 li.widget-container h2 > a:hover {
     text-decoration: underline;
 }
+
+div#log-in-button {
+    transform: translateY(10px);
+}
+
+div#log-in-button > a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+div#log-in-button > a:hover {
+    text-decoration: underline;
+}

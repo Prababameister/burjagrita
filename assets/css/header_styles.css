@@ -101,3 +101,7 @@ div#profile-menu {
 div#profile-menu.open-profile-menu {
     max-height: 400px;
 }
+
+div#profile-picture-button {
+    tranform: translateY(40px);
+}

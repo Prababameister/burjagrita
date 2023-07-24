@@ -38,8 +38,8 @@ img#salutation-img {
 }
 
 form#pbmb-login-form {
-    padding-top: 20vh;
-    padding-left: 10vw;
+    padding-top: 5%;
+    padding-left: 3%;
 }
 
 form#pbmb-login-form > p {
@@ -47,20 +47,42 @@ form#pbmb-login-form > p {
 }
 
 form#pbmb-login-form > p > label {
-    font-size: 3vw;
-    line-height: 13vh;
-    position: absolute;
-    left: -15%;
+    font-size: 5vw;
+    margin-right: 3%;
 }
 
+
+form#pbmb-login-form > p.login-remember {
+    padding-top: 7%;
+}
+form#pbmb-login-form > p.login-remember > label {
+    font-size: 2vw;
+}
 
 form#pbmb-login-form > p > input[type=text],
 form#pbmb-login-form > p > input[type=password] {
     border-radius: 0px 10000px 10000px 0px;
     border: 2px solid black;
+    outline: 3px solid #a9adf0;
     color: black;
     width: 80%;
-    height: 10vh;
-    padding-top: 40px;
-    padding-left: 50px;
+    height: 10%;
+    margin-top: 10%;
+
+    font-size: 250%;
+}
+
+form#pbmb-login-form > p > input[type=text]:focus,
+form#pbmb-login-form > p > input[type=password]:focus {
+    outline: 3px solid #c796fb;
+}
+
+form#pbmb-login-form > p.login-submit > input[type=submit] {
+    margin-top: 5%;
+    background: #bcf4a8;
+    width: 30%;
+    height: 5%;
+    border-radius: 0px 10000px 10000px 0px;
+    font-size: 5vw;
+    text-align: left;
 }

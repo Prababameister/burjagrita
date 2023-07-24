@@ -24,7 +24,7 @@
                     'form_id' => 'pbmb-login-form',
                     'label_username' => '✉️',
                     'label_password' => '🔑',
-                    'label_log_in' => 'Log In',
+                    'label_log_in' => '   ↦ ',
                     'remember' => true
                 );
                 wp_login_form( $args );

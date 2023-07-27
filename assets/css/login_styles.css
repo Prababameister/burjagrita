@@ -85,4 +85,15 @@ form#pbmb-login-form > p.login-submit > input[type=submit] {
     border-radius: 0px 10000px 10000px 0px;
     font-size: 5vw;
     text-align: left;
+    border: 2px solid black;
+}
+
+div#login-section > a {
+    text-decoration: none;
+    color: black;
+    font-size: 96px;
+}
+
+div#login-section > a:hover {
+    text-decoration: underline;
 }

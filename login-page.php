@@ -20,14 +20,19 @@
         <div id="login-content">
             <div id="login-section" class="login-panel">
                 <?php
-                $args = array(
-                    'form_id' => 'pbmb-login-form',
-                    'label_username' => '✉️',
-                    'label_password' => '🔑',
-                    'label_log_in' => '   ↦ ',
-                    'remember' => true
-                );
-                wp_login_form( $args );
+                if ( ! is_user_logged_in() ) {
+                    $args = array(
+                        'form_id' => 'pbmb-login-form',
+                        'redirect' => home_url(),
+                        'label_username' => '✉️',
+                        'label_password' => '🔑',
+                        'label_log_in' => '   ↦ ',
+                        'remember' => true
+                    );
+                    wp_login_form( $args );
+                } else {
+                    wp_loginout( home_url() );
+                }
                 ?>
 
             </div>

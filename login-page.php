@@ -33,6 +33,8 @@
                 } else {
                     wp_loginout( home_url() );
                 }
+
+                the_content();
                 ?>
 
             </div>

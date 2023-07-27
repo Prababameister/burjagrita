@@ -240,10 +240,4 @@ function widget_areas_init() {
     ) );
 }
 add_action( 'widgets_init', 'widget_areas_init' );
-
-add_filter( ‘login_url’, ‘custom_login_url’, PHP_INT_MAX );
-function custom_login_url( $login_url ) {
-$login_url = site_url( ‘login-page.php’, ‘login’ );
-    return $login_url;
-}
 ?>

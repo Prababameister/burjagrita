@@ -2,9 +2,9 @@ div#archive-section {
     display: grid;
     grid-template-columns: 30% 30% 30%;
     column-gap: 3%;
-    grid-row-gap: 10%;
+    grid-row-gap: 1%;
     margin-left: 5%;
-    margin-bottom: 10%;
+    margin-bottom: 100%;
 }
 
 h1.archive-entry-title {

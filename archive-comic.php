@@ -34,7 +34,6 @@
                     <?php while ( $result->have_posts() ) : $result->the_post(); ?>
                         <div class="archive-entry">
                             <h1 class="archive-entry-title"> <?php the_title(); ?>: </h1>
-                            <h4 class="archive-entry-date"> <?php the_date(); ?> </h4>
                             <div class="comic-slider-hider">
                                 <div class="comic-thumbnail moving-text">
                                     <a href="<?php the_permalink(); ?>">

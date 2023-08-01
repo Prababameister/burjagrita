@@ -10,9 +10,6 @@ div#archive-section {
 h1.archive-entry-title {
     font-size: 4vw;
 }
-h4.archive-entry-date {
-    font-size: 2vw;
-}
 .comic-slider-hider {
     overflow: hidden;
     border: 1px solid black;

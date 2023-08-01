@@ -28,6 +28,8 @@
             $result = new WP_Query( $args );
             ?>
 
+            <h1 id="archive-title"> Archive </h1>
+
             <div id="archive-section">
                 <?php
                 if ( $result-> have_posts() ) : ?>

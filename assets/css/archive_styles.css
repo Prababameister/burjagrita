@@ -7,6 +7,12 @@ div#archive-section {
     margin-bottom: 100%;
 }
 
+h1#archive-title {
+    text-align: center;
+    font-size: 6vw;
+    margin-top: 3%;
+}
+
 h1.archive-entry-title {
     font-size: 4vw;
 }

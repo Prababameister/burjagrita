@@ -1,0 +1,46 @@
+div#archive-section {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    column-gap: 3%;
+    grid-row-gap: 10%;
+    margin-left: 5%;
+    margin-bottom: 10%;
+}
+
+h1.archive-entry-title {
+    font-size: 4vw;
+}
+h4.archive-entry-date {
+    font-size: 2vw;
+}
+.comic-slider-hider {
+    overflow: hidden;
+    border: 1px solid black;
+    padding: 3%;
+    margin-top: 4%;
+}
+.comic-thumbnail {
+    height: 40vh;
+}
+.comic-thumbnail > a > p > img {
+    height: auto;
+    width: 50vh;
+}
+.moving-text:hover{
+    animation-play-state: paused;
+}
+@keyframes marquee{
+    0%{transform: 0;}
+    50%{transform: translateX(100%);}
+    100%{transform: 0;}
+}
+@media (prefers-reduced-motion: no-preference) {
+    .moving-text {
+        animation: marquee 6s linear infinite;
+        overflow: hidden;
+    }
+}
+
+.comic-thumbnail > img {
+    width: 9%;
+}

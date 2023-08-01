@@ -26,34 +26,28 @@
                 'posts_per_page' => -1 // this will retrive all the post that is published
             );
             $result = new WP_Query( $args );
-            if ( $result-> have_posts() ) : ?>
-                <?php while ( $result->have_posts() ) : $result->the_post(); ?>
-                    <?php the_title(); ?>
-                <?php endwhile; ?>
-            <?php endif; wp_reset_postdata(); ?>
+            ?>
 
-                <div id="content" role="main">
+            <div id="archive-section">
+                <?php
+                if ( $result-> have_posts() ) : ?>
+                    <?php while ( $result->have_posts() ) : $result->the_post(); ?>
+                        <div class="archive-entry">
+                            <h1 class="archive-entry-title"> <?php the_title(); ?>: </h1>
+                            <h4 class="archive-entry-date"> <?php the_date(); ?> </h4>
+                            <div class="comic-slider-hider">
+                                <div class="comic-thumbnail moving-text">
+                                    <a href="<?php the_permalink(); ?>">
+                                        <?php the_content(); ?>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+                <?php endif; wp_reset_postdata(); ?>
+            </div>
 
-		        <?php the_post(); ?>
-		        <h1 class="entry-title"><?php the_title(); ?></h1>
-
-		        <?php get_search_form(); ?>
-
-		        <h2>Archives by Month:</h2>
-		        <ul>
-			        <?php wp_get_archives(array(
-                        'type' => 'monthly',
-                        'post_type' => 'comic'
-                    )); ?>
-		        </ul>
-
-		        <h2>Archives by Subject:</h2>
-		        <ul>
-			        <?php wp_list_categories(); ?>
-		        </ul>
-
-	        </div><!-- #content -->
-        </div><!-- #container -->
+	    </div><!-- #content -->
         <?php
         get_sidebar();
         get_footer();

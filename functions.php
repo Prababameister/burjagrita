@@ -19,6 +19,7 @@ function burjagrita_css_scripts () {
     wp_enqueue_style('comments_styles', get_theme_file_uri('assets/css/comments_styles.css'), false, '1.1', 'all');
     wp_enqueue_style('footer_styles', get_theme_file_uri('assets/css/footer_styles.css'), false, '1.1', 'all');
     wp_enqueue_style('login_styles', get_theme_file_uri('assets/css/login_styles.css'), false, '1.1', 'all');
+    wp_enqueue_style('archive_styles', get_theme_file_uri('assets/css/archive_styles.css'), false, '1.1', 'all');
 
     wp_enqueue_style('main-style', get_stylesheet_uri(), false, '20150320');
     $righteous_font = "@font-face { font-family: Righteous-Regular; src: url(" . get_theme_file_uri('assets/fonts/Righteous-Regular.ttf') . "); font-weight: normal; }";

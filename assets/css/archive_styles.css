@@ -2,9 +2,8 @@ div#archive-section {
     display: grid;
     grid-template-columns: 30% 30% 30%;
     column-gap: 3%;
-    grid-row-gap: 1%;
     margin-left: 5%;
-    margin-bottom: 100%;
+    margin-bottom: 8%;
 }
 
 h1#archive-title {
@@ -15,7 +14,14 @@ h1#archive-title {
 
 h1.archive-entry-title {
     font-size: 4vw;
+    margin-top: -70%;
 }
+
+.archive-entry {
+  width: 100%;
+  margin-top: 75%;
+}
+
 .comic-slider-hider {
     overflow: hidden;
     border: 1px solid black;
